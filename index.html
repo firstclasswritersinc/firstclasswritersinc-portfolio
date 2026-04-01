@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>First Class Writers Inc | Academic Writing Portfolio</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+      font-family:'Poppins',sans-serif;
+      scroll-behavior:smooth;
+    }
+
+    body{
+      background:#f4f7fb;
+      color:#222;
+      line-height:1.7;
+    }
+
+    header{
+      background:linear-gradient(135deg,#0f4c81,#1d76be);
+      color:#fff;
+      padding:30px 8% 90px;
+    }
+
+    nav{
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      flex-wrap:wrap;
+      margin-bottom:60px;
+    }
+
+    .logo{
+      font-size:2rem;
+      font-weight:700;
+    }
+
+    nav ul{
+      display:flex;
+      list-style:none;
+      gap:22px;
+      flex-wrap:wrap;
+    }
+
+    nav a{
+      color:#fff;
+      text-decoration:none;
+      font-weight:500;
+      transition:.3s;
+    }
+
+    nav a:hover{
+      color:#dcefff;
+    }
+
+    .hero{
+      display:grid;
+      grid-template-columns:1.1fr 1fr;
+      gap:50px;
+      align-items:center;
+    }
+
+    .hero h1{
+      font-size:3.1rem;
+      line-height:1.2;
+      margin-bottom:20px;
+    }
+
+    .hero p{
+      font-size:1.05rem;
+      margin-bottom:30px;
+      color:#eef7ff;
+      max-width:650px;
+    }
+
+    .btn{
+      display:inline-block;
+      padding:14px 26px;
+      border-radius:10px;
+      text-decoration:none;
+      font-weight:600;
+      margin:8px 10px 8px 0;
+      transition:.3s;
+    }
+
+    .btn-primary{
+      background:#fff;
+      color:#1d76be;
+    }
+
+    .btn-primary:hover{
+      background:#dcefff;
+    }
+
+    .btn-outline{
+      border:2px solid #fff;
+      color:#fff;
+    }
+
+    .btn-outline:hover{
+      background:rgba(255,255,255,.12);
+    }
+
+    .hero img{
+      width:100%;
+      border-radius:18px;
+      box-shadow:0 20px 40px rgba(0,0,0,.25);
+    }
+
+    section{
+      padding:85px 8%;
+    }
+
+    .section-title{
+      text-align:center;
+      margin-bottom:50px;
+    }
+
+    .section-title h2{
+      color:#0f4c81;
+      font-size:2.3rem;
+      margin-bottom:10px;
+    }
+
+    .section-title p{
+      color:#666;
+      max-width:700px;
+      margin:auto;
+    }
+
+    .about-box,
+    .contact-box{
+      background:#fff;
+      padding:40px;
+      border-radius:18px;
+      box-shadow:0 12px 30px rgba(0,0,0,.08);
+    }
+
+    .skills{
+      display:flex;
+      flex-wrap:wrap;
+      gap:12px;
+      margin-top:25px;
+    }
+
+    .skill{
+      background:#e5f2fc;
+      color:#0f4c81;
+      padding:10px 16px;
+      border-radius:30px;
+      font-size:.95rem;
+      font-weight:600;
+    }
+
+    .grid{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+      gap:25px;
+    }
+
+    .card{
+      background:#fff;
+      padding:30px;
+      border-radius:16px;
+      box-shadow:0 10px 25px rgba(0,0,0,.08);
+      transition:.3s;
+    }
+
+    .card:hover{
+      transform:translateY(-8px);
+    }
+
+    .card h3{
+      color:#1d76be;
+      margin-bottom:12px;
+    }
+
+    .sample-card{
+      background:#fff;
+      padding:30px;
+      border-radius:16px;
+      box-shadow:0 10px 25px rgba(0,0,0,.08);
+      text-align:center;
+    }
+
+    .sample-card h3{
+      color:#0f4c81;
+      margin-bottom:14px;
+    }
+
+    .download-btn{
+      display:inline-block;
+      margin-top:18px;
+      padding:12px 20px;
+      background:#1d76be;
+      color:#fff;
+      text-decoration:none;
+      border-radius:8px;
+      font-weight:600;
+      transition:.3s;
+    }
+
+    .download-btn:hover{
+      background:#0f4c81;
+    }
+
+    blockquote{
+      background:#fff;
+      padding:28px;
+      border-left:5px solid #1d76be;
+      border-radius:14px;
+      box-shadow:0 10px 25px rgba(0,0,0,.06);
+      font-style:italic;
+    }
+
+    .contact-links{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+      gap:18px;
+      margin-top:30px;
+    }
+
+    .contact-link{
+      background:#0f4c81;
+      color:#fff;
+      text-decoration:none;
+      text-align:center;
+      padding:18px;
+      border-radius:12px;
+      font-weight:600;
+      transition:.3s;
+    }
+
+    .contact-link:hover{
+      background:#1d76be;
+      transform:translateY(-4px);
+    }
+
+    footer{
+      background:#0b2f4a;
+      color:#fff;
+      text-align:center;
+      padding:30px;
+      font-size:.95rem;
+    }
+
+    @media(max-width:900px){
+      .hero{
+        grid-template-columns:1fr;
+      }
+
+      .hero h1{
+        font-size:2.4rem;
+      }
+
+      nav{
+        justify-content:center;
+        gap:20px;
+      }
+
+      nav ul{
+        justify-content:center;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <nav>
+      <div class="logo">First Class Writers Inc</div>
+
+      <ul>
+        <li><a href="#about">About</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#samples">Samples</a></li>
+        <li><a href="#reviews">Reviews</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+
+    <div class="hero">
+      <div>
+        <h1>Professional Academic Writing & Research Support</h1>
+
+        <p>
+          Reliable, confidential and high-quality academic support for university-level work across a wide range of subjects. We provide well-researched, original work with proper referencing and timely delivery.
+        </p>
+
+        <a href="#samples" class="btn btn-primary">View Samples</a>
+        <a href="#contact" class="btn btn-outline">Contact Me</a>
+      </div>
+
+      <div>
+        <img src="https://images.unsplash.com/photo-1455390582262-044cdead277a?auto=format&fit=crop&w=1200&q=80" alt="Academic writing workspace">
+      </div>
+    </div>
+  </header>
+
+  <section id="about">
+    <div class="section-title">
+      <h2>About Me</h2>
+      <p>Learn more about First Class Writers Inc and what we offer.</p>
+    </div>
+
+    <div class="about-box">
+      <p>
+        My name is Donald, founder of <strong>First Class Writers Inc</strong>. I provide professional academic writing assistance, research support, editing, proofreading and data analysis services for students and professionals.
+      </p>
+
+      <br>
+
+      <p>
+        I specialize in producing original, well-structured and properly referenced work. Every project is handled with complete confidentiality and delivered on time. Rates start from <strong>$10/hour</strong> depending on the deadline and complexity.
+      </p>
+
+      <div class="skills">
+        <span class="skill">Research Papers</span>
+        <span class="skill">Dissertations & Theses</span>
+        <span class="skill">Literature Reviews</span>
+        <span class="skill">Editing & Proofreading</span>
+        <span class="skill">APA 7th Edition</span>
+        <span class="skill">Harvard Referencing</span>
+        <span class="skill">MLA Format</span>
+        <span class="skill">SPSS & Data Analysis</span>
+      </div>
+    </div>
+  </section>
+
+  <section id="projects">
+    <div class="section-title">
+      <h2>Projects Worked On</h2>
+      <p>Examples of the different academic projects and subjects covered.</p>
+    </div>
+
+    <div class="grid">
+      <div class="card">
+        <h3>Accounting & Economics</h3>
+        <p>Research papers, financial analysis, business reports, case studies and market research projects.</p>
+      </div>
+
+      <div class="card">
+        <h3>Marketing & Human Resource Management</h3>
+        <p>Consumer behavior reports, HR strategies, recruitment plans and organizational development assignments.</p>
+      </div>
+
+      <div class="card">
+        <h3>Nursing & Public Health</h3>
+        <p>Evidence-based nursing papers, healthcare reports, care plans and public health research projects.</p>
+      </div>
+
+      <div class="card">
+        <h3>Psychology & Education</h3>
+        <p>Behavioral studies, mental health papers, educational theories and child development projects.</p>
+      </div>
+
+      <div class="card">
+        <h3>Law & Sociology</h3>
+        <p>Legal research, constitutional law papers, sociology essays and literature reviews.</p>
+      </div>
+
+      <div class="card">
+        <h3>IT, Engineering & Statistics</h3>
+        <p>Technical reports, engineering assignments, programming projects and statistical analysis using SPSS.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="samples">
+    <div class="section-title">
+      <h2>Research Paper Samples</h2>
+      <p>Download sample research papers in different referencing formats.</p>
+    </div>
+
+    <div class="grid">
+      <div class="sample-card">
+        <h3>APA 7th Edition Sample</h3>
+        <p>
+          A fully formatted research paper using APA 7th edition style with title page, headings, citations and references.
+        </p>
+
+        <a href="samples/apa-7th-sample.docx" target="_blank" class="download-btn">
+          Download APA Sample
+        </a>
+      </div>
+
+      <div class="sample-card">
+        <h3>Harvard Referencing Sample</h3>
+        <p>
+          Example of a university-level research paper formatted using Harvard referencing style.
+        </p>
+
+        <a href="samples/harvard-sample.docx" target="_blank" class="download-btn">
+          Download Harvard Sample
+        </a>
+      </div>
+
+      <div class="sample-card">
+        <h3>MLA Research Paper Sample</h3>
+        <p>
+          Sample academic paper written in MLA format with in-text citations and Works Cited page.
+        </p>
+
+        <a href="samples/mla-sample.docx" target="_blank" class="download-btn">
+          Download MLA Sample
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section id="reviews">
+    <div class="section-title">
+      <h2>Client Reviews</h2>
+      <p>Feedback from previous clients and collaborators.</p>
+    </div>
+
+    <div class="grid">
+      <blockquote>
+        “Excellent work and delivered before the deadline. The paper was detailed, properly referenced and exactly what I needed.”
+        <br><br>
+        <strong>— Sarah M.</strong>
+      </blockquote>
+
+      <blockquote>
+        “Very professional and easy to work with. I received high-quality editing and proofreading services.”
+        <br><br>
+        <strong>— Kevin T.</strong>
+      </blockquote>
+
+      <blockquote>
+        “The dissertation support and data analysis were excellent. Highly recommended.”
+        <br><br>
+        <strong>— James R.</strong>
+      </blockquote>
+    </div>
+  </section>
+
+  <section id="contact">
+    <div class="section-title">
+      <h2>Contact Me</h2>
+      <p>Click any option below to contact me directly.</p>
+    </div>
+
+    <div class="contact-box">
+      <div class="contact-links">
+        <a href="mailto:firstclasswritersinc@gmail.com" class="contact-link">
+          📧 Email Me
+        </a>
+
+        <a href="tel:+16013053432" class="contact-link">
+          📞 Call Me
+        </a>
+
+        <a href="sms:+16013053432" class="contact-link">
+          📱 Send Text
+        </a>
+
+        <a href="https://wa.me/16013053432" target="_blank" class="contact-link">
+          💬 WhatsApp
+        </a>
+
+        <a href="https://discord.com/users/firstclasswritersinc" target="_blank" class="contact-link">
+          🎮 Discord
+        </a>
+      </div>
+
+      <br><br>
+
+      <p><strong>Email:</strong> firstclasswritersinc@gmail.com</p>
+      <p><strong>Phone / WhatsApp:</strong> +1 601 305 3432</p>
+      <p><strong>Discord:</strong> firstclasswritersinc</p>
+      <p><strong>Rates:</strong> Starting from $10/hour depending on complexity and deadline.</p>
+    </div>
+  </section>
+
+  <footer>
+    © 2026 First Class Writers Inc. All Rights Reserved.
+  </footer>
+
+</body>
+</html>
